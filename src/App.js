@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Counter from './Counter';
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
       
-      <Counter />
+      <Counter init={77} incrementBy={10}/>
+      <Counter init={2} incrementBy={8}/>
 
     </div>
   );
