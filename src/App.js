@@ -2,15 +2,31 @@ import React from 'react';
 import './App.css';
 import Counter from './Counter';
 
-const App = (props) => {
-  return (
-    <div className="App">
-      
-      <Counter init={77} incrementBy={10}/>
-      <Counter init={2} incrementBy={8}/>
+class App extends React.Component {
 
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      item: ''
+    }
+  }
+
+  handleInputChange = event => {
+    this.setState({ item: event.target.value });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        
+        <Counter init={5} incrementBy={Number(this.state.item)}/>
+        <Counter init={10} incrementBy={Number(this.state.item)}/>
+        <br/>
+        <input type='number' placeholder='Introduce multiplo' onChange={this.handleInputChange} />
+
+      </div>
+    )
+  }
 }
 
 export default App;

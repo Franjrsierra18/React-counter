@@ -7,7 +7,7 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: +this.props.init
+      count: Number(this.props.init)
     }
   }
 
